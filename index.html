@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>binarySearch</title>
+</head>
+
+<body style="background-color: beige;">
+<h1>
+    ctrl + shift + j
+</h1>
+</body>
+<script>
+function binarySearch(array, t, start, end) {
+    
+    if (start > end) return false;
+    var mid = Math.floor((start + end) / 2);
+    console.warn(mid);
+
+    if (array[mid] == t) return true;
+
+    if (array[mid] > t)
+        return binarySearch(array, t, start, mid - 1);
+    else
+        return binarySearch(array, t, mid + 1, end);
+}
+
+var arr = [1,5,7,9,11,13,15,20,22,24,29,40];
+var t =1;
+
+if (binarySearch(arr, t, 0, arr.length - 1)) {
+    console.log("mill gaya");
+} else {
+    console.log("Nahi hai");
+}
+
+
+
+</script>
+
+</html>
